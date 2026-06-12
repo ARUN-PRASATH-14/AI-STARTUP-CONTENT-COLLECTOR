@@ -244,7 +244,7 @@ project/
 ## 👨‍💻 Author
 
 **Arun Prasath**
-Internship Project – Automated Data Collection System
+Internship Task Project  – Automated Data Collection System
 
 ---
 
