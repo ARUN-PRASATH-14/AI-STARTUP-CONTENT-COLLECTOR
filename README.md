@@ -249,7 +249,7 @@ cd -Automated-Data-Collection-System-
 📌 2. Create Virtual Environment (Recommended)
 python -m venv venv
 
-Activate it:
+Activate environment:
 
 Windows
 
@@ -266,34 +266,43 @@ Create a .env file in the root directory:
 
 SUPABASE_URL=your_supabase_project_url
 SUPABASE_KEY=your_supabase_anon_or_service_key
-📌 5. Run Streamlit Application
+📌 5. Run Streamlit App
 streamlit run app.py
 
-Then open:
+Then open in browser:
 
 http://localhost:8501
-📌 6. Run Data Pipeline Manually (Optional)
-
-If you want to test backend scraping only:
-
+📌 6. Run Pipeline Manually (Optional)
 python main.py
-📌 7. GitHub Actions (Automation)
+📌 7. GitHub Actions Automation
 
-The pipeline runs automatically using GitHub Actions:
+The project includes a fully automated pipeline using GitHub Actions.
 
-⏱ Scheduled execution (cron job)
-🔁 Runs scraper automatically
-📦 Stores data in Supabase
-📊 No manual intervention required
+⏱ Runs on schedule (cron job)
+🔁 Executes scraping pipeline automatically
+📦 Stores data into Supabase
+🚫 No manual intervention required
 
 Workflow file:
 
 .github/workflows/automation.yml
-🧠 Environment Notes
-Ensure Supabase credentials are correctly configured
-GitHub Secrets must include:
+🔐 Required GitHub Secrets
+
+Set these in:
+
+Repo → Settings → Secrets and variables → Actions
+
 SUPABASE_URL
 SUPABASE_KEY
+🚀 After Setup
+
+Once everything is configured:
+
+Run Streamlit dashboard
+Click Fetch Latest Content
+Or wait for automated GitHub Actions run
+Data is stored automatically in Supabase
+
 ---
 
 ## 👨‍💻 Author
