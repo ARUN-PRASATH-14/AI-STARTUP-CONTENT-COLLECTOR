@@ -217,18 +217,27 @@ Used in web systems for authentication and tracking (not required for selected p
 ```
 project/
 │
-├── main.py
-├── scrapers/
-├── api/
-├── supabase_client.py
-├── app.py
-├── requirements.txt
+├── main.py                  # Entry point for running the full pipeline manually
+│
+├── scrapers/               # Web scraping modules
+│   ├── techcrunch.py       # Scraper for TechCrunch articles
+│   ├── anthropic.py        # Scraper for Anthropic blog
+│
+├── api/                    # API integration modules
+│   ├── hackernews.py       # Hacker News API data fetcher
+│
+├── supabase_client.py      # Supabase database connection & client setup
+│
+├── app.py                  # Streamlit dashboard (UI for visualization)
+│
+├── requirements.txt        # Python dependencies
 │
 ├── .github/
 │   └── workflows/
-│       └── automation.yml
+│       └── automation.yml  # GitHub Actions workflow for scheduled automation
 │
-└── README.md
+└── README.md               # Project documentation
+
 ```
 
 ---
