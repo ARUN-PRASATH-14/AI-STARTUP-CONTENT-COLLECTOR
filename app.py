@@ -8,26 +8,18 @@ from scraper import (
     fetch_hackernews
 )
 
-# ----------------------------------
-# Page Config
-# ----------------------------------
+
 st.set_page_config(
     page_title="AI & Startup Content Collector",
     page_icon="📰",
     layout="wide"
 )
 
-# ----------------------------------
-# Header
-# ----------------------------------
 st.title("📰 AI & Startup Content Collector")
 st.caption(
     "Automated data collection system using Web Scraping + API Integration"
 )
 
-# ----------------------------------
-# Fetch Button
-# ----------------------------------
 if st.button("🔄 Fetch Latest Content"):
 
     with st.spinner("Collecting content from all sources..."):
@@ -39,9 +31,6 @@ if st.button("🔄 Fetch Latest Content"):
     st.success("Content collected successfully!")
     st.rerun()
 
-# ----------------------------------
-# Load Data
-# ----------------------------------
 response = (
     supabase.table("articles")
     .select("*")
@@ -57,9 +46,6 @@ if not articles:
 
 df = pd.DataFrame(articles)
 
-# ----------------------------------
-# Dashboard Metrics
-# ----------------------------------
 st.subheader("📊 Dashboard Overview")
 
 col1, col2, col3 = st.columns(3)
@@ -82,18 +68,13 @@ with col3:
         min(len(df), 10)
     )
 
-# ----------------------------------
-# Source Distribution
-# ----------------------------------
 st.subheader("📈 Source Distribution")
 
 source_counts = df["source"].value_counts()
 
 st.bar_chart(source_counts)
 
-# ----------------------------------
-# Filters
-# ----------------------------------
+
 st.subheader("🔍 Search & Filter")
 
 col1, col2 = st.columns(2)
@@ -109,7 +90,7 @@ with col2:
         ["All"] + sorted(df["source"].unique().tolist())
     )
 
-# Search Filter
+
 if search:
     df = df[
         df["title"].str.contains(
@@ -119,13 +100,11 @@ if search:
         )
     ]
 
-# Source Filter
+
 if source_filter != "All":
     df = df[df["source"] == source_filter]
 
-# ----------------------------------
-# Articles Section
-# ----------------------------------
+
 st.subheader("📰 Latest Articles")
 
 for _, row in df.iterrows():
@@ -166,9 +145,7 @@ for _, row in df.iterrows():
             f"🔗 **Article Link:** [Open Article]({row['url']})"
         )
 
-# ----------------------------------
-# Footer
-# ----------------------------------
+
 st.divider()
 
 st.caption(
