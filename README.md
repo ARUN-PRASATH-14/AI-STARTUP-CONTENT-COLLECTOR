@@ -9,7 +9,7 @@
 
 * 🌐 Streamlit App: [https://automated-data-collection.streamlit.app/](https://automated-data-collection.streamlit.app/)
 * 📦 GitHub Repo: [https://github.com/ARUN-PRASATH-14/-Automated-Data-Collection-System-](https://github.com/ARUN-PRASATH-14/-Automated-Data-Collection-System-)
-* 🗄️ Database: Supabase (PostgreSQL Cloud) - https://qharzsqaatrglmycftwx.supabase.co
+* 🗄️ Database: Supabase (PostgreSQL Cloud)
 
 ---
 
