@@ -5,27 +5,21 @@ from supabase_client import supabase
 import re
 
 
-# -----------------------------
-# Utility: Clean Title
-# -----------------------------
+
 def clean_title(title):
     title = re.sub(r"\b\w{3}\s\d{1,2},\s\d{4}", "", title)
     title = re.sub(r"\s+", " ", title).strip()
     return title
 
 
-# -----------------------------
-# Generate Summary (FIXED)
-# -----------------------------
+
 def generate_summary(title):
     if not title:
         return ""
     return title[:120] + "..."
 
 
-# -----------------------------
-# Normalize Article Schema
-# -----------------------------
+
 def normalize_article(article, fallback_source="unknown"):
     return {
         "title": clean_title(article.get("title", "")),
@@ -39,9 +33,7 @@ def normalize_article(article, fallback_source="unknown"):
     }
 
 
-# -----------------------------
-# Save to Supabase (Dedup)
-# -----------------------------
+
 def save_articles(articles):
     inserted = 0
     skipped = 0
@@ -71,9 +63,7 @@ def save_articles(articles):
     return inserted, skipped
 
 
-# -----------------------------
-# TechCrunch Scraper
-# -----------------------------
+
 def scrape_techcrunch():
     url = "https://techcrunch.com"
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -126,9 +116,7 @@ def scrape_techcrunch():
     return cleaned
 
 
-# -----------------------------
-# Anthropic Scraper
-# -----------------------------
+
 def scrape_anthropic():
     url = "https://www.anthropic.com/news"
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -181,9 +169,7 @@ def scrape_anthropic():
     return cleaned
 
 
-# -----------------------------
-# Hacker News API
-# -----------------------------
+
 def fetch_hackernews():
     articles = []
 
@@ -230,9 +216,7 @@ def fetch_hackernews():
         return []
 
 
-# -----------------------------
-# Run All Sources
-# -----------------------------
+
 def run_all_sources():
     print("\n🚀 Starting Automated Data Collection Pipeline\n")
 
