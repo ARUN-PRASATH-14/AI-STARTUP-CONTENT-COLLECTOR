@@ -239,36 +239,7 @@ project/
 └── README.md               # Project documentation
 
 ```
-
 ---
-
-# 1. Clone the repository
-git clone https://github.com/ARUN-PRASATH-14/-Automated-Data-Collection-System-.git
-cd -Automated-Data-Collection-System-
-
-# 2. Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# Windows
-venv\Scripts\activate
-
-# Mac/Linux
-source venv/bin/activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Create environment variables file
-# (.env in root directory)
-SUPABASE_URL=your_supabase_url
-SUPABASE_KEY=your_supabase_key
-
-# 5. Run Streamlit app
-streamlit run app.py
-
-# 6. Run pipeline manually (optional)
-python main.py
 
 ## 👨‍💻 Author
 
