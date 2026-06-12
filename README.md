@@ -239,7 +239,61 @@ project/
 └── README.md               # Project documentation
 
 ```
+⚙️ Project Setup Instructions
 
+Follow the steps below to set up and run the project locally or in deployment environments.
+
+📌 1. Clone the Repository
+git clone https://github.com/ARUN-PRASATH-14/-Automated-Data-Collection-System-.git
+cd -Automated-Data-Collection-System-
+📌 2. Create Virtual Environment (Recommended)
+python -m venv venv
+
+Activate it:
+
+Windows
+
+venv\Scripts\activate
+
+Mac/Linux
+
+source venv/bin/activate
+📌 3. Install Dependencies
+pip install -r requirements.txt
+📌 4. Configure Environment Variables
+
+Create a .env file in the root directory:
+
+SUPABASE_URL=your_supabase_project_url
+SUPABASE_KEY=your_supabase_anon_or_service_key
+📌 5. Run Streamlit Application
+streamlit run app.py
+
+Then open:
+
+http://localhost:8501
+📌 6. Run Data Pipeline Manually (Optional)
+
+If you want to test backend scraping only:
+
+python main.py
+📌 7. GitHub Actions (Automation)
+
+The pipeline runs automatically using GitHub Actions:
+
+⏱ Scheduled execution (cron job)
+🔁 Runs scraper automatically
+📦 Stores data in Supabase
+📊 No manual intervention required
+
+Workflow file:
+
+.github/workflows/automation.yml
+🧠 Environment Notes
+Ensure Supabase credentials are correctly configured
+GitHub Secrets must include:
+SUPABASE_URL
+SUPABASE_KEY
 ---
 
 ## 👨‍💻 Author
