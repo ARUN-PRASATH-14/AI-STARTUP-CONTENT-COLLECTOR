@@ -1,5 +1,5 @@
 
-# 📊 Automated Data Collection System
+# 📊 Automated Data Collection System (AI-STARTUP-CONTENT-COLLECTOR)
 
 > A fully automated data pipeline that collects real-time information from public web sources and APIs, processes it, and stores it in a structured cloud database using Supabase — with complete CI/CD automation via GitHub Actions.
 
