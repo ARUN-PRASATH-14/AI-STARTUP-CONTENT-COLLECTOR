@@ -239,39 +239,39 @@ project/
 └── README.md               # Project documentation
 
 ```
-# 1. Clone the repository
+1. Clone the repository
 git clone https://github.com/ARUN-PRASATH-14/-Automated-Data-Collection-System-.git
 cd -Automated-Data-Collection-System-
 
-# 2. Create virtual environment
+2. Create virtual environment
 python -m venv venv
 
-# Activate virtual environment
-# Windows
+Activate virtual environment
+Windows
 venv\Scripts\activate
 
-# Mac/Linux
+Mac/Linux
 source venv/bin/activate
 
-# 3. Install dependencies
+3. Install dependencies
 pip install -r requirements.txt
 
-# 4. Create environment variables file
-# (.env in root directory)
+4. Create environment variables file
+(.env in root directory)
 SUPABASE_URL=your_supabase_url
 SUPABASE_KEY=your_supabase_key
 
-# 5. Run Streamlit app
+5. Run Streamlit app
 streamlit run app.py
 
-# 6. Run pipeline manually (optional)
+6. Run pipeline manually (optional)
 python main.py
 
-# Workflow file location
+Workflow file location
 .github/workflows/automation.yml
 
-# Runs automatically every 5 minutes (or scheduled interval)
-# Also supports manual trigger (workflow_dispatch)
+Runs automatically every 5 minutes (or scheduled interval)
+Also supports manual trigger (workflow_dispatch)
 
 Repo → Settings → Secrets and variables → Actions
 
