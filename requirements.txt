@@ -1,5 +1,8 @@
-supabase 
-python-dotenv 
-streamlit 
-requests 
+supabase
+python-dotenv
+streamlit
+requests
 beautifulsoup4
+huggingface_hub
+feedparser
+huggingface
